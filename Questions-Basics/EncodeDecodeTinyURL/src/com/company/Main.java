@@ -1,16 +1,22 @@
 package com.company;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
-public class Main {
+public  class Main {
+    public static void printEntries (Map map1) {
+//        Set<Map.Entry> entries = new HashSet<>(); //entries = set of map
+        Iterator<Map> it = (Iterator<Map>) map1.entrySet().iterator();
+
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
 
     public static void main(String[] args) {
 	// write your code here
 
-        Map<Integer, String> map = new HashMap<>();
-        Map<String, Integer> mapURLKey = new HashMap<>();
+        Map<Integer, String> map = new LinkedHashMap<>();
+        Map<String, Integer> mapURLKey = new LinkedHashMap<>();
         String baseURL = "http://tinyurl.com/";
 
         Scanner input = new Scanner(System.in);
@@ -30,5 +36,8 @@ public class Main {
 
             url = input.next();
         }
+        printEntries(map);
+
     }
-}
+    }
+
