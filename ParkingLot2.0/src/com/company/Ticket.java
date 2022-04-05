@@ -55,9 +55,9 @@ public class Ticket {
 
         for (ParkingSpot parkingSpot : parkingLot.getParkingSpots(this.entrance.getEntranceID())) {
 
-            if (!parkingSpot.checkAvailability()) continue;
+//            if (!parkingSpot.checkAvailability()) continue;
 
-            if (parkingSpot.getParkingSpotType().equals(vehicleType)) {
+            if (parkingSpot.checkAvailability() && parkingSpot.getParkingSpotType().equals(vehicleType)) { // &&
                 this.parkingSlotID = parkingSpot.getParkingSpotID();
                 parkingSpot.parkingSpotOccupied();
                 return true;
