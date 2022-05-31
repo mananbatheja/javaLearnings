@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class EmpRepo {
+public class EmpRepository {
     public List<Employee> employees = new ArrayList<>(); // public because need to initiate from commandLineRunner
 
     public List<Employee> getAll() {

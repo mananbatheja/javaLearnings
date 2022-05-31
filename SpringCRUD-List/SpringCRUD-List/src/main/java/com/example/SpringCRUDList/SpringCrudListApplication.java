@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class SpringCrudListApplication implements CommandLineRunner {
 
 	@Autowired
-	EmpRepo empRepo;
+	EmpRepository empRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCrudListApplication.class, args);
@@ -22,6 +22,6 @@ public class SpringCrudListApplication implements CommandLineRunner {
 		Employee e1 = new Employee(1, "Tony Stark", "Stark Tower");
 		Employee e2 = new Employee(2, "Steve Rogers", "Queens");
 
-		empRepo.employees.addAll(Arrays.asList(e1, e2));
+		empRepository.employees.addAll(Arrays.asList(e1, e2));
 	}
 }
